@@ -31,4 +31,4 @@ repository, but is universal (for Linux). I'll keep the AUTOMATIC1111 notebook w
 Note: **Only universal on Linux**, only `Local_fast_DreamBooth-Win.iypnb` is Windows compatible. And IDK about Mac, but I don't think anyone cares about Mac anyways.
 
 ## TODO:
- - Add universal site-packages...-ing
+Nothing right now :)

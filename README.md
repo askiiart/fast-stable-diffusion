@@ -18,8 +18,8 @@ Colab adaptations AUTOMATIC1111 Webui and Dreambooth, train your model using thi
 <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HLKY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Relaxed mode
  
-<a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast_stable_diffusion_hlky.ipynb"><img src='https://github.com/TheLastBen/fast-stable-diffusion/raw/main/Dreambooth/2.jpg'> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast_stable_diffusion_relaxed.ipynb"> 
- <img src='https://github.com/TheLastBen/fast-stable-diffusion/raw/main/Dreambooth/3.jpg'></a>
+<a href="https://colab.research.google.com/github/askiiart/universal-fast-stable-diffusion/blob/main/fast_stable_diffusion_hlky.ipynb"><img src='https://github.com/askiiart/universal-fast-stable-diffusion/raw/main/Dreambooth/2.jpg'> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://colab.research.google.com/github/askiiart/universal-fast-stable-diffusion/blob/main/fast_stable_diffusion_relaxed.ipynb"> 
+ <img src='https://github.com/askiiart/universal-fast-stable-diffusion/raw/main/Dreambooth/3.jpg'></a>
 
 ---
 
@@ -28,4 +28,7 @@ Colab adaptations AUTOMATIC1111 Webui and Dreambooth, train your model using thi
 This is a universal version of TheLastBen's [fast-stable-diffusion](https://github.com/TheLastBen/fast-stable-diffusion) repository. It is a fork of the original 
 repository, but is universal (for Linux). I'll keep the AUTOMATIC1111 notebook working for sure, but no promises about the others.
 
-Note: **Only universal on Linux**, only `Local_fast_DreamBooth-Win.iypnb` is Windows compatible. And IDK about Mac, but I don't think anyone cares about Mac either.
+Note: **Only universal on Linux**, only `Local_fast_DreamBooth-Win.iypnb` is Windows compatible. And IDK about Mac, but I don't think anyone cares about Mac anyways.
+
+## TODO:
+ - Add universal site-packages...-ing

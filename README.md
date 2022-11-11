@@ -30,8 +30,7 @@ repository, but is universal (for Linux). I'll keep the AUTOMATIC1111 notebook w
 
 ## Notes and Limitations 
 - **Only universal on Linux**, only `Local_fast_DreamBooth-Win.iypnb` is Windows compatible (and is *only* compatible with Windows). And IDK about Mac, but I don't think anyone cares about Mac anyways.
-- Status: My NVIDIA drivers are broken, so it might be a while until I update this repo. 
-  - Also, I was having issues with broken notebooks when pulling, so right now I'm working on writing a tool to pull notebooks without breaking them. Again, it might be a while before this repo gets updated.
+- Sorry for no updates in a while, [my drivers were broken](https://www.youtube.com/watch?v=i2lhwb_OckQ).
 
 ## TODO:
 - Remove localtunnel - not needed, and doesn't work properly on local runtimes

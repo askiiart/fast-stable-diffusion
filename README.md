@@ -26,7 +26,6 @@ SD implementation by @XavierXiao : https://github.com/XavierXiao/Dreambooth-Stab
 ---
 
 # README Additions
-
 This is a universal fork of TheLastBen's [fast-stable-diffusion](https://github.com/TheLastBen/fast-stable-diffusion) repository.
 repository, but is universal (for Linux). I'll keep the AUTOMATIC1111 notebook working for sure, but no promises about the others.
 

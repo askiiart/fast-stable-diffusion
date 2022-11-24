@@ -1,6 +1,6 @@
 # Original README:
 
-# fast-stable-diffusion Colabs, +25-50% speed increase, AUTOMATIC1111 + DreamBooth
+## fast-stable-diffusion Colabs, +25-50% speed increase, AUTOMATIC1111 + DreamBooth
 Colab adaptations AUTOMATIC1111 Webui and Dreambooth, train your model using this easy simple and fast colab, all you have to do is enter you huggingface token once, and it will cache all the files in GDrive, including the trained model and you will be able to use it directly from the colab, make sure you use high quality reference pictures for the training, enjoy !!
  
  
@@ -11,9 +11,11 @@ Colab adaptations AUTOMATIC1111 Webui and Dreambooth, train your model using thi
 <img src='https://github.com/askiiart/universal-fast-stable-diffusion/raw/main/Dreambooth/1.jpg'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://colab.research.google.com/github/askiiart/universal-fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb"><img src='https://github.com/askiiart/universal-fast-stable-diffusion/raw/main/Dreambooth/4.jpg'></a>
 
+Dreambooth paper : https://dreambooth.github.io/
+version
+SD implementation by @XavierXiao : https://github.com/XavierXiao/Dreambooth-Stable-Diffusion
  
- 
-## Other Webuis
+### Other Webuis
  
 <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HLKY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Relaxed mode
@@ -25,7 +27,7 @@ Colab adaptations AUTOMATIC1111 Webui and Dreambooth, train your model using thi
 
 # README Additions
 
-This is a universal version of TheLastBen's [fast-stable-diffusion](https://github.com/TheLastBen/fast-stable-diffusion) repository. It is a fork of the original 
+This is a universal fork of TheLastBen's [fast-stable-diffusion](https://github.com/TheLastBen/fast-stable-diffusion) repository.
 repository, but is universal (for Linux). I'll keep the AUTOMATIC1111 notebook working for sure, but no promises about the others.
 
 ## Notes and Limitations 

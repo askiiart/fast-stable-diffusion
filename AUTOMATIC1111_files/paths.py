@@ -3,14 +3,15 @@ import os
 import sys
 import modules.safe
 
+os.system(f'echo {os.getcwd()} >> /tmp/pathsV2.log')
+
 script_path = f'{os.getcwd()}-webui'
 models_path = os.path.join(script_path, "models")
 sys.path.insert(0, script_path)
 
 # search for directory of stable diffusion in following places
 sd_path = None
-possible_sd_paths = [os.path.join(script_path, '/content/gdrive/MyDrive/sd/stable-diffusion'), '.', os.path.dirname(script_path)]
-for possible_sd_path in possible_sd_paths:
+possible_sd_paths = [f'{os.getcwd()}/sd/stable-diffusion']for possible_sd_path in possible_sd_paths:
     if os.path.exists(os.path.join(possible_sd_path, 'ldm/models/diffusion/ddpm.py')):
         sd_path = os.path.abspath(possible_sd_path)
         break

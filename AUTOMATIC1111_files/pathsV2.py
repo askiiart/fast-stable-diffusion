@@ -3,7 +3,7 @@ import os
 import sys
 import modules.safe
 
-script_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+script_path = f'{os.getcwd()}-webui'
 models_path = os.path.join(script_path, "models")
 sys.path.insert(0, script_path)
 

@@ -6,13 +6,18 @@ import gradio as gr
 import os
 import random
 
-pipeline = StableDiffusionPipeline.from_pretrained("/content/gdrive/MyDrive/models/instance",torch_dtype=torch.float16).to("cuda")
+pipeline = StableDiffusionPipeline.from_pretrained(
+    "/content/gdrive/MyDrive/models/instance", torch_dtype=torch.float16).to("cuda")
+
+
 def dummy(images, **kwargs):
     return images, False
+
+
 pipeline.safety_checker = dummy
 
 
-css="""
+css = """
 
 .wrap .m-12 svg { display:none!important; }
 .wrap .m-12::before { content:"Loading..." }
@@ -162,9 +167,11 @@ box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow,
 
 """
 
+
 def sd(x):
-  z=torch.Generator(device='cuda').manual_seed(x)
-  return z
+    z = torch.Generator(device='cuda').manual_seed(x)
+    return z
+
 
 with gr.Blocks(css=css, analytics_enabled=False, title="Stable Diffusion") as demo:
     with gr.Tabs(elem_id='tabss') as tabs:
@@ -173,54 +180,57 @@ with gr.Blocks(css=css, analytics_enabled=False, title="Stable Diffusion") as de
             with gr.Row(elem_id='body').style(equal_height=False):
                 with gr.Column():
                     with gr.Group(elem_id="prompt_row"):
-                        output_txt2img_gallery = gr.Gallery(label="Images", elem_id="txt2img_gallery_output").style(grid=[2,3], container=True)
-                        prompt = gr.Textbox(label="Prompt", placeholder="Prompt", elem_id='prompt_input', lines=3, max_lines=4, value='', show_label=False).style()
-                        txt2img_btn = gr.Button("Generate", elem_id="generate", variant="primary")
-                   
+                        output_txt2img_gallery = gr.Gallery(
+                            label="Images", elem_id="txt2img_gallery_output").style(grid=[2, 3], container=True)
+                        prompt = gr.Textbox(label="Prompt", placeholder="Prompt", elem_id='prompt_input',
+                                            lines=3, max_lines=4, value='', show_label=False).style()
+                        txt2img_btn = gr.Button(
+                            "Generate", elem_id="generate", variant="primary")
+
                 with gr.Column(elem_id="txtset"):
-                    alphas=gr.Textbox(label='Seed',interactive=True, visible=False, placeholder='')
-                    width = gr.Slider(minimum=512, maximum=2048, step=64, label="Width", value=512)
-                    height = gr.Slider(minimum=512, maximum=2048, step=64, label="Height", value=512)
-                    guidance_scale = gr.Slider(minimum=1.0, maximum=30.0, step=0.5, label='Classifier Free Guidance Scale', value=7)
-                    num_inference_steps = gr.Slider(minimum=1, maximum=150, step=1, label="Sampling Steps", value=35)
-                    batch_size = gr.Slider(minimum=1, maximum=25, step=1, label='Number of Images', value=1)
+                    alphas = gr.Textbox(
+                        label='Seed', interactive=True, visible=False, placeholder='')
+                    width = gr.Slider(minimum=512, maximum=2048,
+                                      step=64, label="Width", value=512)
+                    height = gr.Slider(
+                        minimum=512, maximum=2048, step=64, label="Height", value=512)
+                    guidance_scale = gr.Slider(
+                        minimum=1.0, maximum=30.0, step=0.5, label='Classifier Free Guidance Scale', value=7)
+                    num_inference_steps = gr.Slider(
+                        minimum=1, maximum=150, step=1, label="Sampling Steps", value=35)
+                    batch_size = gr.Slider(
+                        minimum=1, maximum=25, step=1, label='Number of Images', value=1)
                     #txt2img_sampling = gr.Dropdown(label='Sampling Method', choices=["DDIM", "PLMS", 'k_dpm_2_a', 'k_dpm_2', 'k_euler_a', 'k_euler', 'k_heun', 'k_lms'], value='k_euler_a')
-                     
-                                
 
-                     #           txt2img_seed_type=gr.Checkbox(label="Random Seed", value=True)                        
+                    #           txt2img_seed_type=gr.Checkbox(label="Random Seed", value=True)
                     #            seed_btn = gr.Button("Keep Current Seed")
-                           #     txt2img_variant_amount = gr.Slider(minimum=0.0, maximum=1.0, label='Variation Amount',value=0.0, interactive=True)
+                    #     txt2img_variant_amount = gr.Slider(minimum=0.0, maximum=1.0, label='Variation Amount',value=0.0, interactive=True)
 
+                   # with gr.Row():
+                    #output_txt2img_copy_to_input_btn = gr.Button("Send to img2img")
+                    #output_txt2img_copy_to_uncrop_btn = gr.Button("Send to Enhancements")
 
-				
-
-          
-                   #with gr.Row():                           
-                        #output_txt2img_copy_to_input_btn = gr.Button("Send to img2img")
-                        #output_txt2img_copy_to_uncrop_btn = gr.Button("Send to Enhancements")
         def t2i(prompt, height, width, num_inference_steps, guidance_scale, batch_size):
+            working_dir = os.getcwd()
+            path = f'{working_dir}/Output_images/'
 
-           path='/content/gdrive/MyDrive/Output_images/'
-           
-           
-           with autocast("cuda"):
-               images = pipeline([prompt]*batch_size, height=height, width=width, num_inference_steps=num_inference_steps, guidance_scale=guidance_scale).images                 
-               for k in images:
-                  name=(prompt[:50] + '..') if len(prompt) > 50 else prompt
-                  if not os.path.exists('/content/gdrive/MyDrive/Output_images/'):
-                    os.mkdir('/content/gdrive/MyDrive/Output_images/')
-                  if not os.path.exists('/content/gdrive/MyDrive/Output_images/' +name):
-                    os.mkdir('/content/gdrive/MyDrive/Output_images/' +name)
-                  r=random.randint(1,100000) 
-                  filename = os.path.join(path, name, name +'_'+str(r))
-                  k.save(f"{filename}.png")  
-               return images
-        txt2img_btn.click(t2i, [prompt, height, width, num_inference_steps, guidance_scale, batch_size], [output_txt2img_gallery])
-             
- 
+            with autocast("cuda"):
+                images = pipeline([prompt]*batch_size, height=height, width=width,
+                                  num_inference_steps=num_inference_steps, guidance_scale=guidance_scale).images
+                for k in images:
+                    name = (prompt[:50] + '..') if len(prompt) > 50 else prompt
+                    if not os.path.exists(f'{working_dir}/Output_images/'):
+                        os.mkdir(f'{working_dir}/Output_images/')
+                    if not os.path.exists(f'{working_dir}/Output_images/' + name):
+                        os.mkdir(f'{working_dir}/Output_images/' + name)
+                    r = random.randint(1, 100000)
+                    filename = os.path.join(path, name, name + '_'+str(r))
+                    k.save(f"{filename}.png")
+                return images
+        txt2img_btn.click(t2i, [prompt, height, width, num_inference_steps,
+                          guidance_scale, batch_size], [output_txt2img_gallery])
 
-       # generator.change(checkbox2, generator, txt2img_seed_type)	                
+       # generator.change(checkbox2, generator, txt2img_seed_type)
        # seed_btn.click(test2, alphas, generator)
 
 demo.launch(share=True)

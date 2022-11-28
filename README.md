@@ -22,6 +22,7 @@ SD implementation by @XavierXiao : https://github.com/XavierXiao/Dreambooth-Stab
  
 <a href="https://colab.research.google.com/github/askiiart/universal-fast-stable-diffusion/blob/main/fast_stable_diffusion_hlky.ipynb"><img src='https://github.com/askiiart/universal-fast-stable-diffusion/raw/main/Dreambooth/2.jpg'> </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://colab.research.google.com/github/askiiart/universal-fast-stable-diffusion/blob/main/fast_stable_diffusion_relaxed.ipynb"> 
  <img src='https://github.com/askiiart/universal-fast-stable-diffusion/raw/main/Dreambooth/3.jpg'></a>
+</center>
 
 ---
 

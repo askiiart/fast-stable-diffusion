@@ -40,6 +40,14 @@ jobs:
           # list of changed files within `super-linter`
           fetch-depth: 0
 
+      # Convert notebooks to python so they can be linted
+      - name: Convert notebooks to Python
+        run: find . -type f -name "*.ipynb" -exec jupyter nbconvert --to python --TemplateExporter.exclude_markdown=true {} \;
+
+      # Convert notebooks to markdown so they can be linted
+      - name: Convert notebooks to Markdown
+        run: find . -type f -name "*.ipynb" -exec jupyter nbconvert --to markdown --TemplateExporter.exclude_code_cell=true {} \;
+
       ################################
       # Run Linter against code base #
       ################################

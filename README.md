@@ -1,3 +1,11 @@
+---
+
+# Archived
+
+This repo is now archived to due lack of interest on my part, and the fact that it no longer runs on my hardware or Google Cloud, so I can't use or test it anyways. However, as far as I know, this all should work fine in its current state.
+
+---
+
 [![Open AUTOMATIC1111 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/askiiart/universal-fast-stable-diffusion/blob/main/fast_stable_diffusion_AUTOMATIC1111.ipynb) [![Lint Code Base](https://github.com/askiiart/universal-fast-stable-diffusion/actions/workflows/linter.yml/badge.svg)](https://github.com/askiiart/universal-fast-stable-diffusion/actions/workflows/linter.yml)
 
 # Original README:
